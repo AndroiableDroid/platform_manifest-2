@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+<!-- Manifest -->
+<project path="manifest" name="platform_manifest" remote="fred" groups="fred" />
+
+<!-- Build repositories -->
+<project path="build/make" name="platform_build" remote="fred" >
+  <copyfile src="core/root.mk" dest="Makefile" />
+  <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+  <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+  <linkfile src="core" dest="build/core" />
+  <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+  <linkfile src="target" dest="build/target" />
+  <linkfile src="tools" dest="build/tools" />
+</project>
+<project path="build/soong" name="platform_build_soong" remote="fred" >
+  <linkfile src="root.bp" dest="Android.bp" />
+  <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+</project>
+
+<!-- Hardware -->
+<project path="hardware/libhardware" name="platform_hardware_libhardware" remote="fred" groups="fred" />
+<project path="hardware/qcom/bootctrl" name="platform_hardware_qcom_bootctrl" remote="fred" groups="fred" />
+<project path="hardware/qcom/bt" name="platform_hardware_qcom_bt" remote="fred" groups="fred" />
+<project path="hardware/qcom/power" name="platform_hardware_qcom_power" remote="fred" groups="fred" />
+
+<!-- Frameworks -->
+<project path="frameworks/av" name="platform_frameworks_av" remote="fred" groups="fred" />
+<project path="frameworks/base" name="platform_frameworks_base" remote="fred" groups="fred" />
+<project path="frameworks/compile/mclinker" name="platform_frameworks_compile_mclinker" remote="fred" groups="fred" />
+<project path="frameworks/native" name="platform_frameworks_native" remote="fred" groups="fred" />
+<project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" remote="fred" groups="fred" />
+<project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" remote="fred" groups="fred" />
+
+<!-- Packages -->
+<project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="fred" groups="fred" />
+
+<!-- Prebuilts -->
+<project path="prebuilts/build-tools" name="platform_prebuilts_build-tools" remote="fred" groups="fred" />
+
+<!-- Vendor -->
+<project path="vendor/fred" name="platform_vendor_fred" remote="fred" groups="fred" />
+<project path="vendor/codeaurora/commonsys/telephony" name="platform_vendor_codeaurora_telephony" remote="fred" groups="fred" />
+<project path="vendor/qcom/opensource/commonsys/bluetooth" name="platform_vendor_qcom-opensource_bluetooth" remote="fred" groups="fred" />
+<project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="platform_vendor_qcom-opensource_bluetooth_ext" remote="fred" groups="fred" />
+<project path="vendor/qcom/opensource/commonsys/system/bt" name="platform_vendor_qcom-opensource_system_bt" remote="fred" groups="fred" />
+<project path="vendor/qcom/opensource/commonsys-intf/display" name="platform_vendor_qcom-opensource_display-commonsys-intf" remote="fred" groups="fred" />
+
+</manifest>

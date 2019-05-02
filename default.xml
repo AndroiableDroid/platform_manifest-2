@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch="git://codeaurora.org/quic/la" name="caf" review="codeaurora.org"/>
-  <default remote="caf" revision="refs/heads/LA.UM.7.3.r1"/>
+
+  <remote  fetch="git://codeaurora.org/quic/la"
+           name="caf"
+           review="codeaurora.org"/>
+
+  <remote  name="fred"
+           fetch="https://github.com/FredProject"
+           revision="f9x" />
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <default remote="caf"
+           revision="refs/tags/LA.UM.7.3.r1-07400-sdm845.0"
+           sync-j="8" 
+           sync-c="true"
+           sync-tags="false" />
+
+  <!-- Repo's to sync from FredOS -->
+  <include name="fred.xml" />
+
+  <!-- Remove projects for FredOS -->
+  <include name="remove.xml" />
+
   <project name="abl/tianocore/edk2" path="bootable/bootloader/edk2" revision="refs/heads/uefi.lnx.1.9.r13-rel"/>
   <project groups="mirror-aosp-pie-platform-release,pdk,pdk-cw-fs" name="device/common" revision="refs/heads/ks-aosp.lnx.1.0.r1-rel"/>
   <project groups="mirror-aosp-pie-platform-release,pdk" name="device/generic/arm64" revision="refs/heads/ks-aosp.lnx.1.0.r1-rel"/>
